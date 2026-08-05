@@ -151,18 +151,36 @@ class Chats extends StatelessWidget {
               onTap: () {
                 context.go('activeChat');
               },
-              leading: CircleAvatar(),
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(),
+                  Badge(smallSize: 12, backgroundColor: Colors.green),
+                ],
+              ),
               title: const Text('Sarah Jenkins'),
               subtitle: const Text('The new designs look fantastic! C...'),
               trailing: Badge(label: const Text('3')),
             ),
             ListTile(
-              leading: CircleAvatar(),
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(),
+                  Badge(smallSize: 12, backgroundColor: Colors.green),
+                ],
+              ),
               title: const Text('Alex Rivera'),
               subtitle: const Text('Sound good, i\'ll send the files over...'),
             ),
             ListTile(
-              leading: CircleAvatar(),
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(),
+                  CircleAvatar(radius: 16, backgroundColor: Colors.green),
+                ],
+              ),
               title: const Text('Q3 Planning'),
               subtitle: const Text('You: Let\'s align on the roadmap on...'),
             ),
