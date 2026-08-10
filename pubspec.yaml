@@ -63,6 +63,7 @@ flutter:
   assets:
     - images/professional_and_friendly_headshot_of_a_young_man_in_his_late_20s_smiling_warm.png
     - images/vivid_presence_logo.png
+    - images/chat_image.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
