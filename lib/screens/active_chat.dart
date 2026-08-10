@@ -24,7 +24,11 @@ class ActiveChat extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListTile(
-              leading: CircleAvatar(),
+              leading: CircleAvatar(
+                backgroundImage: const NetworkImage(
+                  'https://lh3.googleusercontent.com/aida-public/AB6AXuA8jzv-hiFHiVDyeww-PC11pgB0xaZ0qN5CH_hK1c6HS95FDXd0c29JyPeX2fV1UpnYJfyuVhz_o8e25aMwBnylx5MaLeQ52cRCg4KZdmC5InE2n88SYEm4oe7_dqrq2k0jJFbDz0TKwMj7S0MFT-bB7YmNAUfN-lGJmhRCyebNknsjidopOGFPba_dXrsnJa8qa34c-Z9scNA1aF05BU_QB_mwth5XK5okEllhBMJPyC9IN1xFs-MZ',
+                ),
+              ),
               title: const Text('Sarah Jenkins'),
               subtitle: const Text('Online'),
               trailing: SizedBox(
@@ -83,7 +87,9 @@ class ActiveChat extends StatelessWidget {
                 Container(
                   width: 250,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
                       bottomLeft: Radius.circular(12),
@@ -95,7 +101,7 @@ class ActiveChat extends StatelessWidget {
                   child: Text(
                     'Hi! Yes, everything is on track. I just pushed the final updates to staging.',
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.onSecondary,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                 ),
@@ -107,7 +113,9 @@ class ActiveChat extends StatelessWidget {
                 Container(
                   width: 250,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
                       bottomLeft: Radius.circular(12),
@@ -119,7 +127,7 @@ class ActiveChat extends StatelessWidget {
                   child: Text(
                     'I\'ll send you the preview link in a minute.',
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.onSecondary,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                 ),
@@ -132,7 +140,9 @@ class ActiveChat extends StatelessWidget {
                 Container(
                   width: 250,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(
+                      context,
+                    ).colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
                       bottomLeft: Radius.circular(12),
@@ -143,11 +153,14 @@ class ActiveChat extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Image.network('images/chat_image.png'),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Image.network('images/chat_image.png'),
+                      ),
                       Text(
                         'Here\'s a sneak peek of the new dashboard! What do you think?',
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSecondary,
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
                     ],

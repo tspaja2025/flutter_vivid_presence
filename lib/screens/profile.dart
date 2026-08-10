@@ -19,19 +19,55 @@ class Profile extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  CircleAvatar(
-                    radius: 60,
-                    backgroundImage: const NetworkImage(
-                      'images/professional_and_friendly_headshot_of_a_young_man_in_his_late_20s_smiling_warm.png',
-                    ),
+                  Stack(
+                    alignment: Alignment.bottomRight,
+                    children: [
+                      CircleAvatar(
+                        radius: 60,
+                        backgroundImage: const NetworkImage(
+                          'images/professional_and_friendly_headshot_of_a_young_man_in_his_late_20s_smiling_warm.png',
+                        ),
+                      ),
+                      IconButton.filled(
+                        onPressed: () {},
+                        icon: const Icon(Symbols.edit),
+                      ),
+                    ],
                   ),
                   const Text('Alex Rivera'),
                   DropdownMenu(
                     hintText: 'Available',
                     dropdownMenuEntries: [
-                      DropdownMenuEntry(value: 'available', label: 'Available'),
-                      DropdownMenuEntry(value: 'busy', label: 'Busy'),
-                      DropdownMenuEntry(value: 'offline', label: 'Offline'),
+                      DropdownMenuEntry(
+                        value: 'available',
+                        leadingIcon: Badge(
+                          smallSize: 12,
+                          backgroundColor: Theme.of(
+                            context,
+                          ).colorScheme.secondaryContainer,
+                        ),
+                        label: 'Available',
+                      ),
+                      DropdownMenuEntry(
+                        value: 'busy',
+                        leadingIcon: Badge(
+                          smallSize: 12,
+                          backgroundColor: Theme.of(
+                            context,
+                          ).colorScheme.tertiary,
+                        ),
+                        label: 'Busy',
+                      ),
+                      DropdownMenuEntry(
+                        value: 'offline',
+                        leadingIcon: Badge(
+                          smallSize: 12,
+                          backgroundColor: Theme.of(
+                            context,
+                          ).colorScheme.surfaceContainerHighest,
+                        ),
+                        label: 'Offline',
+                      ),
                     ],
                   ),
                 ],
@@ -41,8 +77,14 @@ class Profile extends StatelessWidget {
               leading: Container(
                 width: 44,
                 height: 44,
-                decoration: BoxDecoration(color: Colors.grey),
-                child: const Icon(Symbols.key),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Symbols.key,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               title: const Text('Account'),
               subtitle: const Text('Security, keys, linked devices'),
@@ -52,8 +94,14 @@ class Profile extends StatelessWidget {
               leading: Container(
                 width: 44,
                 height: 44,
-                decoration: BoxDecoration(color: Colors.grey),
-                child: const Icon(Symbols.lock),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Symbols.lock,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               title: const Text('Privacy'),
               subtitle: const Text('Visibility, blocking, read receipts'),
@@ -63,8 +111,14 @@ class Profile extends StatelessWidget {
               leading: Container(
                 width: 44,
                 height: 44,
-                decoration: BoxDecoration(color: Colors.grey),
-                child: const Icon(Symbols.notifications),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Symbols.notifications,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               title: const Text('Notifications'),
               subtitle: const Text('Sound, badges, do not disturb'),
@@ -74,8 +128,14 @@ class Profile extends StatelessWidget {
               leading: Container(
                 width: 44,
                 height: 44,
-                decoration: BoxDecoration(color: Colors.grey),
-                child: const Icon(Symbols.cloud),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Symbols.cloud,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               title: const Text('Data and Storage'),
               subtitle: const Text('Network usage, auto-download'),
@@ -85,14 +145,20 @@ class Profile extends StatelessWidget {
               leading: Container(
                 width: 44,
                 height: 44,
-                decoration: BoxDecoration(color: Colors.grey),
-                child: const Icon(Symbols.help_center),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  Symbols.help_center,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
               title: const Text('Help'),
               subtitle: const Text('FAQ, contact us, app info'),
               trailing: const Icon(Symbols.keyboard_arrow_right),
             ),
-            const Text('Vivid Presence v4.2.1 (Build 8902)'),
+            Center(child: const Text('Vivid Presence v4.2.1 (Build 8902)')),
           ],
         ),
       ),
