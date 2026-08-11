@@ -10,12 +10,15 @@ class NewGroup extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {
-            context.go('/groups');
-          },
+          onPressed: () => context.go('/groups'),
           icon: const Icon(Symbols.arrow_back),
         ),
         title: const Text('New Group'),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        icon: const Icon(Symbols.group_add),
+        label: const Text('Create Group'),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -107,12 +110,6 @@ class NewGroup extends StatelessWidget {
                   ],
                 ),
               ],
-            ),
-            FilledButton.icon(
-              onPressed: () {},
-              iconAlignment: IconAlignment.end,
-              icon: const Icon(Symbols.group_add),
-              label: const Text('Create Group'),
             ),
           ],
         ),

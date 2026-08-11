@@ -42,6 +42,8 @@ class _AppScaffold extends State<AppScaffold> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         leading: UnconstrainedBox(
@@ -68,25 +70,45 @@ class _AppScaffold extends State<AppScaffold> {
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: _onDestinationSelected,
         selectedIndex: widget.currentIndex,
+        indicatorColor: Colors.transparent,
         destinations: [
           NavigationDestination(
-            selectedIcon: Icon(Symbols.chat_bubble),
-            icon: Icon(Symbols.chat_bubble),
+            selectedIcon: Icon(
+              Symbols.chat_bubble,
+              fill: 1,
+              color: colorScheme.primary,
+            ),
+            icon: Icon(
+              Symbols.chat_bubble,
+              color: colorScheme.onSurfaceVariant,
+            ),
             label: 'Chats',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Symbols.person),
-            icon: Icon(Symbols.person),
+            selectedIcon: Icon(
+              Symbols.person,
+              fill: 1,
+              color: colorScheme.primary,
+            ),
+            icon: Icon(Symbols.person, color: colorScheme.onSurfaceVariant),
             label: 'Contacts',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Symbols.people),
-            icon: Icon(Symbols.people),
+            selectedIcon: Icon(
+              Symbols.people,
+              fill: 1,
+              color: colorScheme.primary,
+            ),
+            icon: Icon(Symbols.people, color: colorScheme.onSurfaceVariant),
             label: 'Groups',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Symbols.settings),
-            icon: Icon(Symbols.settings),
+            selectedIcon: Icon(
+              Symbols.settings,
+              fill: 1,
+              color: colorScheme.primary,
+            ),
+            icon: Icon(Symbols.settings, color: colorScheme.onSurfaceVariant),
             label: 'Profile',
           ),
         ],
